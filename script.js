@@ -16,10 +16,10 @@ body.style.background =
 css.textContent = body.style.background + ";";
 }
 
+setGradient(rgb(0, 255, 0), rgb(63, 171, 253))
 //color1.addEventListener("input", setGradient);
-
 //color2.addEventListener("input", setGradient);
 
 generateButton.addEventListener("click", function() {
-    setGradient(); // Chame a função setGradient() quando o botão for clicado
+    setGradient();
   });
