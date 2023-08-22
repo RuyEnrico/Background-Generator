@@ -16,10 +16,32 @@ body.style.background =
 css.textContent = body.style.background + ";";
 }
 
-setGradient(rgb(0, 255, 0), rgb(63, 171, 253))
+setGradient()
 //color1.addEventListener("input", setGradient);
 //color2.addEventListener("input", setGradient);
 
 generateButton.addEventListener("click", function() {
     setGradient();
   });
+
+  function randomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+const randomButton = document.getElementById("randomButton");
+
+randomButton.addEventListener("click", function() {
+    const col1 = randomColor();
+    const col2 = randomColor();
+    
+    // Atualize os valores dos inputs com as novas cores
+    color1.value = col1;
+    color2.value = col2;
+
+    // Aplique as cores ao background
+    setGradient(col1, col2);
+});
